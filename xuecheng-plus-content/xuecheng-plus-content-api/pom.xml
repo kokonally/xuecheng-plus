@@ -9,6 +9,12 @@
     </parent>
     <artifactId>xuecheng-plus-content-api</artifactId>
     <dependencies>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.xuecheng</groupId>
             <artifactId>xuecheng-plus-content-service</artifactId>
