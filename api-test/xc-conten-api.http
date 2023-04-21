@@ -1,3 +1,4 @@
+###查询课程基本信息
 POST http://{{content_host}}/content/course/list?pageNo=1&pageSize=2
 Content-Type: application/json
 
@@ -6,3 +7,6 @@ Content-Type: application/json
   "courseName": "java",
   "publishStatus": ""
 }
+
+### 查询课程分类
+GET http://{{content_host}}/content/course-category/tree-nodes

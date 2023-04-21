@@ -51,17 +51,4 @@ public class ContenServiceTest {
 
         System.out.println("pageResult = " + pageResult);
     }
-
-
-    @Test
-    public void testCourseBaseInfoService() {
-        PageParams pageParams = new PageParams(1L, 5L);
-        QueryCourseParamsDto queryCourseParamsDto = new QueryCourseParamsDto();
-//        queryCourseParamsDto.setCourseName("java");
-        queryCourseParamsDto.setAuditStatus("202004");
-//        queryCourseParamsDto.setPublishStatus("203001");
-        PageResult<CourseBase> pageResult = courseBaseInfoService.queryCourseBaseList(pageParams, queryCourseParamsDto);
-        Assertions.assertNotNull(pageResult);
-        System.out.println("pageResult = " + pageResult);
-    }
 }
