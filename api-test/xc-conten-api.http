@@ -10,3 +10,27 @@ Content-Type: application/json
 
 ### 查询课程分类
 GET http://{{content_host}}/content/course-category/tree-nodes
+
+### 创建课程
+POST {{content_host}}/content/course
+Content-Type: application/json
+
+{
+
+  "mt": "1-1",
+  "st": "1-1-1",
+  "name": "java网络高级编程",
+  "pic": "wdaddfawads",
+  "teachmode": "200002",
+  "users": "初级人员",
+  "tags": "tagstagstags",
+  "grade": "204001",
+  "description": "12345",
+  "charge": "201001",
+  "price": 10,
+  "originalPrice":100,
+  "qq": "214312232",
+  "wechat": "1234243",
+  "phone": "1332432424",
+  "validDays": 365
+}
