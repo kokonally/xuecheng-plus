@@ -75,7 +75,7 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
     @Override
     public CourseBaseInfoDto createCourseBase(Long companyId, AddCourseDto dto) {
         //1.参数合法性校验
-        if (StringUtils.isBlank(dto.getName())) {
+        /*if (StringUtils.isBlank(dto.getName())) {
 //            throw new RuntimeException("课程名称为空");
             XueChengPlusException.cast("课程名称为空");
         }
@@ -108,7 +108,7 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         if (StringUtils.isBlank(dto.getCharge())) {
 //            throw new RuntimeException("收费规则为空");
             XueChengPlusException.cast("收费规则为空");
-        }
+        }*/
 
         //2.向课程基本信息表course_base写入信息
         CourseBase courseBaseNew = new CourseBase();
