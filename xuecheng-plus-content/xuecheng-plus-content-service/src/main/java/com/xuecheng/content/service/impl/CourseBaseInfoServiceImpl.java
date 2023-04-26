@@ -10,6 +10,7 @@ import com.xuecheng.content.mapper.CourseCategoryMapper;
 import com.xuecheng.content.mapper.CourseMarketMapper;
 import com.xuecheng.content.model.dto.AddCourseDto;
 import com.xuecheng.content.model.dto.CourseBaseInfoDto;
+import com.xuecheng.content.model.dto.EditCourseDto;
 import com.xuecheng.content.model.dto.QueryCourseParamsDto;
 import com.xuecheng.content.model.po.CourseBase;
 import com.xuecheng.content.model.po.CourseCategory;
@@ -144,6 +145,7 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         return getCourseBaseInfo(courseBaseNew.getId());
     }
 
+
     //保存或更新营销信息
     private int saveCourseMarket(CourseMarket courseMarket) {
         //1.参数合法性校验
@@ -172,7 +174,8 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
     }
 
     //查询课程信息
-    private CourseBaseInfoDto getCourseBaseInfo(long courseId) {
+    @Override
+    public CourseBaseInfoDto getCourseBaseInfo(Long courseId) {
         //1.查询课程基本信息表查询
         CourseBase courseBase = courseBaseMapper.selectById(courseId);
         if (courseBase == null) {
@@ -197,6 +200,39 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         courseBaseInfoDto.setStName(st.getName());  //设置小分类名称
 
         return courseBaseInfoDto;
+    }
+
+    @Override
+    @Transactional
+    public CourseBaseInfoDto updateCourseBase(Long companyId, EditCourseDto editCourseDto) {
+        //1.判断是否有修改权限
+        Long id = editCourseDto.getId();
+        CourseBase courseBase = courseBaseMapper.selectById(id);
+        //查询营销信息
+        CourseMarket courseMarket = courseMarketMapper.selectById(id);
+        if (courseBase == null || courseMarket == null) {
+            XueChengPlusException.cast("课程不存在");
+        }
+        if (!companyId.equals(courseBase.getCompanyId())) {
+            XueChengPlusException.cast("本机构只能修改本机构课程");
+        }
+
+
+        //2.封装数据
+        BeanUtils.copyProperties(editCourseDto, courseBase);
+        BeanUtils.copyProperties(editCourseDto, courseMarket);
+        //3.修改时间
+        courseBase.setCreateDate(LocalDateTime.now());
+
+        //4.写入数据库
+        int i1 = courseBaseMapper.updateById(courseBase);
+        int i2 = this.saveCourseMarket(courseMarket);
+        if (i1 <= 0 || i2 <= 0) {
+            XueChengPlusException.cast("修改课程信息错误");
+        }
+
+        //5.查询课程信息
+        return this.getCourseBaseInfo(id);
     }
 
 }
