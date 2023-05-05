@@ -53,9 +53,13 @@ public class TeachplanServiceImpl implements TeachplanService {
         LambdaQueryWrapper<Teachplan> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Teachplan::getParentid, parentid);
         queryWrapper.eq(Teachplan::getCourseId, courseId);
-        Integer count = teachplanMapper.selectCount(queryWrapper);
-        teachplan.setOrderby(count + 1);
-
+        List<Teachplan> teachplans = teachplanMapper.selectList(queryWrapper);
+        //通过遍历来获得排序字段的最大值
+        int maxOrderBy = 0;
+        for (Teachplan t : teachplans) {
+            maxOrderBy = Math.max(t.getOrderby(), maxOrderBy);
+        }
+        teachplan.setOrderby(maxOrderBy + 1);
 
         teachplanMapper.insert(teachplan);
     }
