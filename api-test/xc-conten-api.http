@@ -42,3 +42,7 @@ Content-Type: application/json
 ###根据课程id查询课程计划
 GET http://{{content_host}}/content/teachplan/117/tree-nodes
 Content-Type: application/json
+
+### 删除课程计划
+DELETE http://{{content_host}}/content/teachplan/292
+Content-Type: application/json

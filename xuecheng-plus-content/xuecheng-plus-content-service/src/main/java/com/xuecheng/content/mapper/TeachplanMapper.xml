@@ -26,7 +26,6 @@
     <sql id="Base_Column_List">
         id, pname, parentid, grade, media_type, start_time, end_time, description, timelength, orderby, course_id, course_pub_id, status, is_preview, create_date, change_date
     </sql>
-
     <resultMap id="treeNodeResultMap" type="com.xuecheng.content.model.dto.TeachplanDto">
         <id column="one_id" property="id"/>
         <result column="one_pname" property="pname"/>
@@ -97,5 +96,6 @@
                  two.orderby
 
     </select>
+
 
 </mapper>

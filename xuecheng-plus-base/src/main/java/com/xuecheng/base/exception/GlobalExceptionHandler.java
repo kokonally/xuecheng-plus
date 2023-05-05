@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public RestErrorResponse MethodArgumentNotValidException(MethodArgumentNotValidException e) {
+    public RestErrorResponse methodArgumentNotValidException(MethodArgumentNotValidException e) {
         BindingResult bindingResult = e.getBindingResult();
         List<String> errors = new ArrayList<>();
         bindingResult.getFieldErrors().forEach(item -> {
@@ -51,6 +51,16 @@ public class GlobalExceptionHandler {
         log.error("系统异常{}", e.getMessage(), errMessage);
 
         return new RestErrorResponse(errMessage);
+    }
+
+    @ExceptionHandler(DeleteErrorException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public DeleteErrorResponse DeleteErrorException(DeleteErrorException exception) {
+        //1.记录异常
+        log.error("删除操作异常 {}", exception.getMessage(), exception);
+
+        //2.返回异常结果
+        return DeleteErrorResponse.createDeleteErrorResponse(exception);
     }
 
 }

@@ -18,4 +18,5 @@ public class TeachplanMapperTest {
         List<TeachplanDto> teachplanDtos = teachplanMapper.selectTreeNodes(117L);
         System.out.println(teachplanDtos);
     }
+
 }

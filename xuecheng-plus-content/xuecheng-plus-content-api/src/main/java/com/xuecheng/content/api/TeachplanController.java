@@ -8,7 +8,6 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,5 +37,11 @@ public class TeachplanController {
     @PostMapping("/teachplan")
     public void saveTeachplan(@RequestBody SaveTeachplanDto saveTeachplanDto) {
         teachplanService.saveTeachplan(saveTeachplanDto);
+    }
+
+    @ApiOperation("删除课程计划")
+    @DeleteMapping("/teachplan/{teachplanId}")
+    public void deleteTeachplan(@PathVariable("teachplanId") Long teachplanId) {
+        teachplanService.deleteTeachplan(teachplanId);
     }
 }
