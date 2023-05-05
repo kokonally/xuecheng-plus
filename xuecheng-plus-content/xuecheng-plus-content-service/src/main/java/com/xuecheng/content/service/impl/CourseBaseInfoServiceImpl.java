@@ -185,7 +185,7 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         //2.查询营销表
         CourseMarket courseMarket = courseMarketMapper.selectById(courseId);
         if (courseMarket == null) {
-            return null;
+            courseMarket = new CourseMarket();
         }
 
         //3.合并信息
