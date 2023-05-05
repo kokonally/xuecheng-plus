@@ -27,4 +27,12 @@ public interface TeachplanService {
      * @param teachplanId 课程id
      */
     public void deleteTeachplan(Long teachplanId);
+
+    /**
+     * 向上向下移动
+     * @param type movedown 下移 moveup上移
+     * @param teachplanId 课程计划id
+     */
+    public void moveDownAndUp(String type, Long teachplanId);
+
 }

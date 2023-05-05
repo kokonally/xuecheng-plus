@@ -2,7 +2,6 @@ package com.xuecheng.content.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.xuecheng.base.exception.DeleteErrorException;
-import com.xuecheng.base.exception.DeleteErrorResponse;
 import com.xuecheng.base.exception.ValidationGroups;
 import com.xuecheng.base.exception.XueChengPlusException;
 import com.xuecheng.content.mapper.TeachplanMapper;
@@ -81,6 +80,88 @@ public class TeachplanServiceImpl implements TeachplanService {
 
             //删除课程计划
             teachplanMapper.deleteById(teachplanId);
+        }
+    }
+
+    @Override
+    public void moveDownAndUp(String type, Long teachplanId) {
+        switch (type){
+            case "movedown" :
+                movedown(teachplanId);
+                break;
+            case "moveup" :
+                moveup(teachplanId);
+                break;
+        }
+    }
+
+    /**
+     * 课程下移
+     * @param teachplanId 课程计划id
+     */
+    private void movedown(Long teachplanId) {
+        //1.获取当前课程计划信息
+        Teachplan teachplan = teachplanMapper.selectById(teachplanId);
+        if (teachplan == null) {
+            XueChengPlusException.cast(PARAMS_ERROR);
+        }
+
+        //2.获取下一个课程计划信息
+        LambdaQueryWrapper<Teachplan> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Teachplan::getParentid, teachplan.getParentid());
+        queryWrapper.eq(Teachplan::getCourseId, teachplan.getCourseId());
+        queryWrapper.ne(Teachplan::getId, teachplan.getId());
+        queryWrapper.ge(Teachplan::getOrderby, teachplan.getOrderby());
+        Teachplan teachplanNext = teachplanMapper.selectOne(queryWrapper);
+        if (teachplanNext == null) {
+            return;
+        }
+
+        //3.交换排序字段
+        if (teachplanNext.getOrderby().equals(teachplan.getOrderby())) {
+            teachplan.setOrderby(teachplan.getOrderby() + 1);
+        } else {
+            Integer orderby1 = teachplan.getOrderby();
+            Integer orderby2 = teachplanNext.getOrderby();
+            teachplan.setOrderby(orderby2);
+            teachplanNext.setOrderby(orderby1);
+            teachplanMapper.updateById(teachplan);
+            teachplanMapper.updateById(teachplanNext);
+        }
+    }
+
+    /**
+     * 课程上移
+     * @param teachplanId 课程计划id
+     */
+    private void moveup(Long teachplanId) {
+        //1.获取当前课程计划信息
+        Teachplan teachplan = teachplanMapper.selectById(teachplanId);
+        if (teachplan == null) {
+            XueChengPlusException.cast(PARAMS_ERROR);
+        }
+
+        //2.获取上一个课程计划信息
+        LambdaQueryWrapper<Teachplan> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Teachplan::getParentid, teachplan.getParentid());
+        queryWrapper.eq(Teachplan::getCourseId, teachplan.getCourseId());
+        queryWrapper.ne(Teachplan::getId, teachplan.getId());
+        queryWrapper.le(Teachplan::getOrderby, teachplan.getOrderby());
+        Teachplan teachplanLast = teachplanMapper.selectOne(queryWrapper);
+        if (teachplanLast == null) {
+            return;
+        }
+
+        //3.交换排序字段
+        if (teachplanLast.getOrderby().equals(teachplan.getOrderby())) {
+            teachplan.setOrderby(teachplan.getOrderby() - 1);
+        } else {
+            Integer orderby1 = teachplan.getOrderby();
+            Integer orderby2 = teachplanLast.getOrderby();
+            teachplan.setOrderby(orderby2);
+            teachplanLast.setOrderby(orderby1);
+            teachplanMapper.updateById(teachplan);
+            teachplanMapper.updateById(teachplanLast);
         }
     }
 
