@@ -19,4 +19,21 @@ public class CourseTeacherServiceTest {
         List<CourseTeacher> list = courseTeacherService.list(courseId);
         System.out.println(list);
     }
+
+    @Test
+    void addAndUpdateTeacherTest() {
+        CourseTeacher courseTeacher = new CourseTeacher();
+        courseTeacher.setCourseId(75L);
+        courseTeacher.setTeacherName("王老师");
+        courseTeacher.setPosition("教师职位");
+        courseTeacher.setIntroduction("教师简介");
+        CourseTeacher addCourseTeacherResult = courseTeacherService.addAndUpdateTeacher(courseTeacher);
+        System.out.println("addCourseTeacherResult = " + addCourseTeacherResult);
+
+        courseTeacher.setTeacherName("李老师");
+        courseTeacher.setId(addCourseTeacherResult.getId());
+        CourseTeacher updateCourseTeacherResult = courseTeacherService.addAndUpdateTeacher(courseTeacher);
+        System.out.println("updateCourseTeacherResult = " + updateCourseTeacherResult);
+
+    }
 }

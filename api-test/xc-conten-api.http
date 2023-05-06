@@ -16,7 +16,6 @@ POST http://{{content_host}}/content/course
 Content-Type: application/json
 
 {
-
   "mt": "1-1",
   "st": "1-1-1",
   "name": "",
@@ -28,7 +27,7 @@ Content-Type: application/json
   "description": "12345",
   "charge": "201001",
   "price": 10,
-  "originalPrice":100,
+  "originalPrice": 100,
   "qq": "214312232",
   "wechat": "1234243",
   "phone": "1332432424",
@@ -46,3 +45,32 @@ Content-Type: application/json
 ### 删除课程计划
 DELETE http://{{content_host}}/content/teachplan/292
 Content-Type: application/json
+
+### 查询教师
+GET http://{{content_host}}/content/courseTeacher/list/75
+Content-Type: application/json
+
+###新增教师
+POST http://{{content_host}}/content/courseTeacher
+Content-Type: application/json
+
+{
+  "courseId": 75,
+  "teacherName": "王老师",
+  "position": "教师职位",
+  "introduction": "教师简介"
+}
+
+###修改教师
+POST http://{{content_host}}/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 23,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}

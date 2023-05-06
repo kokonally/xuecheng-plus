@@ -16,4 +16,6 @@ public class TeachplanServiceTest {
         Long teachplanId = 292L;
         teachplanService.deleteTeachplan(teachplanId);
     }
+
+
 }

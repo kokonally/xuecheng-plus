@@ -21,4 +21,19 @@ public class CourseTeacherServiceImpl implements CourseTeacherService {
         queryWrapper.eq(CourseTeacher::getCourseId, courseId);
         return courseTeacherMapper.selectList(queryWrapper);
     }
+
+    @Override
+    public CourseTeacher addAndUpdateTeacher(CourseTeacher courseTeacher) {
+        //1.判断是新增还是修改
+        if (courseTeacher.getId() == null) {
+            //新增
+            courseTeacherMapper.insert(courseTeacher);
+        } else {
+            //修改
+            courseTeacherMapper.updateById(courseTeacher);
+        }
+
+        //2.查询操作
+        return courseTeacherMapper.selectById(courseTeacher.getId());
+    }
 }
