@@ -51,4 +51,10 @@ public class ContenServiceTest {
 
         System.out.println("pageResult = " + pageResult);
     }
+
+    @Test
+    void deleteCourseTest() {
+        Long courseId = 123L;
+        courseBaseInfoService.deleteCourse(courseId);
+    }
 }

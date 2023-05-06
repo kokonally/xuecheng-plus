@@ -112,7 +112,12 @@ public class TeachplanServiceImpl implements TeachplanService {
         queryWrapper.eq(Teachplan::getCourseId, teachplan.getCourseId());
         queryWrapper.ne(Teachplan::getId, teachplan.getId());
         queryWrapper.ge(Teachplan::getOrderby, teachplan.getOrderby());
-        Teachplan teachplanNext = teachplanMapper.selectOne(queryWrapper);
+        queryWrapper.orderByAsc(Teachplan::getOrderby);
+        List<Teachplan> teachplans = teachplanMapper.selectList(queryWrapper);
+        if (teachplans.isEmpty()) {
+            return;
+        }
+        Teachplan teachplanNext = teachplans.get(0);
         if (teachplanNext == null) {
             return;
         }
@@ -147,7 +152,12 @@ public class TeachplanServiceImpl implements TeachplanService {
         queryWrapper.eq(Teachplan::getCourseId, teachplan.getCourseId());
         queryWrapper.ne(Teachplan::getId, teachplan.getId());
         queryWrapper.le(Teachplan::getOrderby, teachplan.getOrderby());
-        Teachplan teachplanLast = teachplanMapper.selectOne(queryWrapper);
+        queryWrapper.orderByDesc(Teachplan::getOrderby);
+        List<Teachplan> teachplans = teachplanMapper.selectList(queryWrapper);
+        if (teachplans.isEmpty()) {
+            return;
+        }
+        Teachplan teachplanLast = teachplans.get(0);
         if (teachplanLast == null) {
             return;
         }
