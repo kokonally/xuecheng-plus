@@ -22,4 +22,11 @@ public interface CourseTeacherService {
      */
     CourseTeacher addAndUpdateTeacher(CourseTeacher courseTeacher);
 
+    /**
+     * 删除教师信息
+     * @param courseId 课程id
+     * @param teacherId 教师id
+     */
+    void deleteTeacher(Long courseId, Long teacherId);
+
 }

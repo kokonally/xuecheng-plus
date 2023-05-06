@@ -1,3 +1,7 @@
+DELETE http://localhost:63040/content/ourseTeacher/course/75/23
+
+###
+
 POST http://localhost:63040/content/courseTeacher
 Content-Type: application/json
 
@@ -744,13 +748,6 @@ GET http://localhost:63040/content/courseTeacher/list/75
 Content-Type: application/json
 
 <> 2023-05-05T211305.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher/list/75
-Content-Type: application/json
-
-<> 2023-05-05T211231.500.json
 
 ###
 

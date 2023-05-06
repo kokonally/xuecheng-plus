@@ -39,6 +39,14 @@ public class CourseTeacherServiceImpl implements CourseTeacherService {
         return courseTeacherMapper.selectById(courseTeacher.getId());
     }
 
+    @Override
+    public void deleteTeacher(Long courseId, Long teacherId) {
+        LambdaQueryWrapper<CourseTeacher> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(CourseTeacher::getId, teacherId);
+        queryWrapper.eq(CourseTeacher::getCourseId, courseId);
+        courseTeacherMapper.delete(queryWrapper);
+    }
+
     private void addCourseTeacher(@Validated(ValidationGroups.Inster.class) CourseTeacher courseTeacher) {
         courseTeacherMapper.insert(courseTeacher);
     }

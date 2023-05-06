@@ -36,4 +36,11 @@ public class CourseTeacherServiceTest {
         System.out.println("updateCourseTeacherResult = " + updateCourseTeacherResult);
 
     }
+
+    @Test
+    void deleteTeacherTest() {
+        Long teacherId = 22L;
+        Long courseId = 75L;
+        courseTeacherService.deleteTeacher(courseId, teacherId);
+    }
 }

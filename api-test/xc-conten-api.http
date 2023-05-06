@@ -74,3 +74,6 @@ Content-Type: application/json
   "photograph": null,
   "createDate": null
 }
+
+###删除教师
+DELETE http://{{content_host}}/content/ourseTeacher/course/75/23
