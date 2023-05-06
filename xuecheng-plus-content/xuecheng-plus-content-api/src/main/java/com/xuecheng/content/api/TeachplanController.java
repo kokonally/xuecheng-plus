@@ -45,6 +45,7 @@ public class TeachplanController {
         teachplanService.deleteTeachplan(teachplanId);
     }
 
+    @ApiOperation("上移或者下移课程计划")
     @PostMapping("/teachplan/{type}/{teachplanId}")
     public void moveDownAndUp(@PathVariable("type") String type, @PathVariable("teachplanId") Long teachplanId) {
         teachplanService.moveDownAndUp(type, teachplanId);
