@@ -29,4 +29,10 @@ public class CourseTeacherController {
     public CourseTeacher addAndUpdateCourseTeacher(@RequestBody CourseTeacher courseTeacher) {
         return courseTeacherService.addAndUpdateTeacher(courseTeacher);
     }
+
+    @ApiOperation("删除教师")
+    @DeleteMapping("/ourseTeacher/course/{courseId}/{courseTeacherId}")
+    public void deleteCourseTeacher() {
+
+    }
 }

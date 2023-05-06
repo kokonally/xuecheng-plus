@@ -1,0 +1,756 @@
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "courseId": 75,
+  "teacherName": "王老师",
+  "position": "教师职位",
+  "introduction": "教师简介"
+}
+
+<> 2023-05-06T170532.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T170512.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "courseId": 75,
+  "teacherName": "王老师",
+  "position": "教师职位",
+  "introduction": "教师简介"
+}
+
+<> 2023-05-06T170451.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T170415.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T165604.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T165551.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T165534.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T165509.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T165114.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T164932.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T164345.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T164245.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T164146.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T163934.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T163805.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T163720.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T124734.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T124713.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T124702.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T124058.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T123826.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T123808.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T123436.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T123430.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T123414.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T122923.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T122706.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T115348.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T115316.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T114225.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 23,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T114218.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T114039.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T114034.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师2",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T113924.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T113641.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T113621.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 24,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T113529.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "courseId": 75,
+  "teacherName": "王老师",
+  "position": "教师职位",
+  "introduction": "教师简介"
+}
+
+<> 2023-05-06T113522.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 23,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T112236.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "id": 23,
+  "courseId": 75,
+  "teacherName": "王老师王老师",
+  "position": "教师职位教师职位",
+  "introduction": "教师简介教师简介",
+  "photograph": null,
+  "createDate": null
+}
+
+<> 2023-05-06T112226.500.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher
+Content-Type: application/json
+
+{
+  "courseId": 75,
+  "teacherName": "王老师",
+  "position": "教师职位",
+  "introduction": "教师简介"
+}
+
+<> 2023-05-06T111941.200.json
+
+###
+
+GET http://localhost:63040/content/courseTeacher/list/75
+Content-Type: application/json
+
+<> 2023-05-06T111705.200.json
+
+###
+
+GET http://localhost:63040/content/courseTeacher/list/72
+Content-Type: application/json
+
+<> 2023-05-06T104618.200.json
+
+###
+
+GET http://localhost:63040/content/courseTeacher/list/72
+Content-Type: application/json
+
+<> 2023-05-06T104616.200.json
+
+###
+
+GET http://localhost:63040/content/courseTeacher/list/72
+Content-Type: application/json
+
+<> 2023-05-06T104614.200.json
+
+###
+
+GET http://localhost:63040/content/courseTeacher/list/72
+Content-Type: application/json
+
+<> 2023-05-06T104610.200.json
+
+###
+
+GET http://localhost:63040/content/courseTeacher/list/72
+Content-Type: application/json
+
+<> 2023-05-05T211409.200.json
+
+###
+
+GET http://localhost:63040/content/courseTeacher/list/75
+Content-Type: application/json
+
+<> 2023-05-05T211305.200.json
+
+###
+
+POST http://localhost:63040/content/courseTeacher/list/75
+Content-Type: application/json
+
+<> 2023-05-05T211231.500.json
+
+###
+
