@@ -1,3 +1,29 @@
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-09T200805.200.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-09T200753.200.json
+
+###
+
 DELETE http://localhost:63040/content/ourseTeacher/course/75/23
 
 ###
@@ -731,20 +757,6 @@ GET http://localhost:63040/content/courseTeacher/list/72
 Content-Type: application/json
 
 <> 2023-05-06T104614.200.json
-
-###
-
-GET http://localhost:63040/content/courseTeacher/list/72
-Content-Type: application/json
-
-<> 2023-05-06T104610.200.json
-
-###
-
-GET http://localhost:63040/content/courseTeacher/list/72
-Content-Type: application/json
-
-<> 2023-05-05T211409.200.json
 
 ###
 
