@@ -1,25 +1,51 @@
-server:
-  servlet:
-    context-path: /system
-  port: 63110
+#server:
+#  servlet:
+#    context-path: /system
+#  port: 63110
 #微服务配置
 spring:
   application:
     name: system-api
-  datasource:
-    druid:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.44.130:3306/xc_system?serverTimezone=UTC&userUnicode=true&useSSL=false&
-      username: root
-      password: 1234
-# 日志文件配置路径
-logging:
-  config: classpath:log4j2-dev.xml
-
-# swagger 文档配置
-swagger:
-  title: "学成在线系统管理"
-  description: "系统管理接口"
-  base-package: com.xuecheng.system
-  enabled: true
-  version: 1.0.0
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 192.168.44.130:8848
+      discovery:
+        namespace: dev
+        group: xuecheng_plus-project
+      config: #配置文件相关配置
+        namespace: dev
+        group: xuecheng_plus-project
+        file-extension: yaml
+        refresh-enabled: true
+        #扩展配置文件
+        extension-configs:
+          - data-id: system-service-${spring.profiles.active}.yaml
+            group: xuecheng_plus-project
+            reflesh: true
+        #共享配置文件
+        shared-configs:
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: xuecheng_plus-common
+            reflesh: true
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: xuecheng_plus-common
+            reflesh: true
+#  datasource:
+#    druid:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://192.168.44.130:3306/xc_system?serverTimezone=UTC&userUnicode=true&useSSL=false&
+#      username: root
+#      password: 1234
+## 日志文件配置路径
+#logging:
+#  config: classpath:log4j2-dev.xml
+#
+## swagger 文档配置
+#swagger:
+#  title: "学成在线系统管理"
+#  description: "系统管理接口"
+#  base-package: com.xuecheng.system
+#  enabled: true
+#  version: 1.0.0
