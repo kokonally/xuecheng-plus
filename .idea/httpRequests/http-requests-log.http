@@ -1,3 +1,141 @@
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T154114.500.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T151052.200.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T145723.200.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T145421.200.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T145306.200.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T144518.200.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T144059.200.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T143814.500.json
+
+###
+
+POST http://localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
+--WebAppBoundary--
+
+<> 2023-05-10T143524.500.json
+
+###
+
 POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
 Content-Type: application/json
 
@@ -633,130 +771,6 @@ Content-Type: application/json
 }
 
 <> 2023-05-06T113641.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T113621.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T113529.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "courseId": 75,
-  "teacherName": "王老师",
-  "position": "教师职位",
-  "introduction": "教师简介"
-}
-
-<> 2023-05-06T113522.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 23,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T112236.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 23,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T112226.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "courseId": 75,
-  "teacherName": "王老师",
-  "position": "教师职位",
-  "introduction": "教师简介"
-}
-
-<> 2023-05-06T111941.200.json
-
-###
-
-GET http://localhost:63040/content/courseTeacher/list/75
-Content-Type: application/json
-
-<> 2023-05-06T111705.200.json
-
-###
-
-GET http://localhost:63040/content/courseTeacher/list/72
-Content-Type: application/json
-
-<> 2023-05-06T104618.200.json
-
-###
-
-GET http://localhost:63040/content/courseTeacher/list/72
-Content-Type: application/json
-
-<> 2023-05-06T104616.200.json
-
-###
-
-GET http://localhost:63040/content/courseTeacher/list/72
-Content-Type: application/json
-
-<> 2023-05-06T104614.200.json
 
 ###
 
