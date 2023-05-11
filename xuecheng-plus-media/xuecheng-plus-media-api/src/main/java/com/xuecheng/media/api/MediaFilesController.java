@@ -59,7 +59,11 @@ public class MediaFilesController {
 
         //调用service上传图片
         Long companyId = 12321441425L;
-        return mediaFileService.uploadFile(uploadparamsDto, companyId, localFilePath);
+        UploadFileResultDto uploadFileResultDto = mediaFileService.uploadFile(uploadparamsDto, companyId, localFilePath);
+        if (tempFile.exists()) {
+            tempFile.delete();
+        }
+        return uploadFileResultDto;
     }
 
 }
