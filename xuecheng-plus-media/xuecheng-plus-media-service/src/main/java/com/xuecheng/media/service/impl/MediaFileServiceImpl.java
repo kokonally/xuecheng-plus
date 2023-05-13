@@ -9,12 +9,15 @@ import com.j256.simplemagic.ContentInfoUtil;
 import com.xuecheng.base.exception.XueChengPlusException;
 import com.xuecheng.base.model.PageParams;
 import com.xuecheng.base.model.PageResult;
+import com.xuecheng.base.model.RestResponse;
 import com.xuecheng.media.config.UploadparamsDto;
 import com.xuecheng.media.mapper.MediaFilesMapper;
 import com.xuecheng.media.model.dto.QueryMediaParamsDto;
 import com.xuecheng.media.model.dto.UploadFileResultDto;
 import com.xuecheng.media.model.po.MediaFiles;
 import com.xuecheng.media.service.MediaFileService;
+import io.minio.GetObjectArgs;
+import io.minio.GetObjectResponse;
 import io.minio.MinioClient;
 import io.minio.UploadObjectArgs;
 import io.minio.errors.*;
@@ -25,11 +28,14 @@ import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FilterInputStream;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -56,6 +62,7 @@ public class MediaFileServiceImpl implements MediaFileService {
 
     @Value("${minio.bucket.files}")
     private String mediafiles;  //存储普通文件
+
     @Value("${minio.bucket.videofiles}")
     private String video;  //存储视频
 
@@ -118,6 +125,75 @@ public class MediaFileServiceImpl implements MediaFileService {
         return uploadFileResultDto;
     }
 
+    @Override
+    public RestResponse<Boolean> checkFile(String fileMd5) {
+        //1.查询数据查询文件是否存在
+        MediaFiles mediaFiles = mediaFilesMapper.selectById(fileMd5);
+        if (mediaFiles != null) {
+            //数据库显示，文件存在
+            //2.查询minio判断文件是否存在
+            GetObjectArgs args = GetObjectArgs.builder()
+                    .bucket(mediaFiles.getBucket())
+                    .object(mediaFiles.getFilePath())
+                    .build();
+            try (FilterInputStream inputStream = minioClient.getObject(args)) {
+                if (inputStream != null) {
+                    //文件在minio存在
+                    return RestResponse.success(true);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return RestResponse.success(false);  //文件不存在
+    }
+
+    @Override
+    public RestResponse<Boolean> checkchunk(String fileMd5, int chunk) {
+        //1.拼装分块在minio的路径
+        String chunkPath = this.getChunkPath(fileMd5, chunk);
+
+        //2.查询minio
+        GetObjectArgs args = GetObjectArgs.builder()
+                .bucket(video)
+                .object(chunkPath)
+                .build();
+        try (FilterInputStream inputStream = minioClient.getObject(args)) {
+            if (inputStream != null) {
+                return RestResponse.success(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return RestResponse.success(false);
+    }
+
+    @Override
+    public RestResponse uploadchunk(String fileMd5, int chunk, String localChunkFilePath) {
+        //1.将分块文件上传到minio
+        String objectPath = this.getChunkPath(fileMd5, chunk);
+        String mimeType = getMimeType(null);
+        boolean isSuccess = this.upload2minio(localChunkFilePath, objectPath, minioClient, video, mimeType);
+        if (!isSuccess) {
+            return RestResponse.validfail(false, "上传分块文件失败");
+        }
+
+        return RestResponse.success(true);
+    }
+
+    /**
+     * 获取分块文件的文件夹路径
+     *
+     * @param fileMd5 文件的md5值
+     * @return /5/a/(md5)/chunk/
+     */
+    private String getChunkPath(String fileMd5, int chunk) {
+        return fileMd5.charAt(0) + "/" + fileMd5.charAt(1) + "/" + fileMd5 + "/" + "chunk/" + chunk;
+    }
+
     /**
      * 生成存入数据库的mediafile
      *
@@ -128,8 +204,8 @@ public class MediaFileServiceImpl implements MediaFileService {
      */
     @Transactional
     public MediaFiles mediaFiles2Db(Long companyId, String fileMD5,
-                                     UploadparamsDto uploadparamsDto,
-                                     String bucket, String objectFileName) {
+                                    UploadparamsDto uploadparamsDto,
+                                    String bucket, String objectFileName) {
         //文件不存在 写入新的
         MediaFiles mediaFiles = new MediaFiles();
         BeanUtils.copyProperties(uploadparamsDto, mediaFiles);
@@ -180,13 +256,14 @@ public class MediaFileServiceImpl implements MediaFileService {
      */
     private String getMimeType(String extensionName) {
         if (extensionName == null) {
-            return null;
+            extensionName = "";
         }
         ContentInfo contentInfo = ContentInfoUtil.findExtensionMatch(extensionName);
         if (contentInfo != null) {
             return contentInfo.getMimeType();
+        } else {
+            return MediaType.APPLICATION_OCTET_STREAM_VALUE;  //未知类型字节流 的类型
         }
-        return null;
     }
 
     /**

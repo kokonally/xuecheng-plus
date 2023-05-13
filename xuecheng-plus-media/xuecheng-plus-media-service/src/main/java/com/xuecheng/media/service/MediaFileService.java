@@ -2,11 +2,14 @@ package com.xuecheng.media.service;
 
 import com.xuecheng.base.model.PageParams;
 import com.xuecheng.base.model.PageResult;
+import com.xuecheng.base.model.RestResponse;
 import com.xuecheng.media.config.UploadparamsDto;
 import com.xuecheng.media.model.dto.QueryMediaParamsDto;
 import com.xuecheng.media.model.dto.UploadFileResultDto;
 import com.xuecheng.media.model.po.MediaFiles;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -28,12 +31,40 @@ public interface MediaFileService {
      */
     public PageResult<MediaFiles> queryMediaFiels(Long companyId, PageParams pageParams, QueryMediaParamsDto queryMediaParamsDto);
 
- /**
-  * 上传文件
-  * @param uploadparamsDto 上传参数
-  * @param companyId 机构id
-  * @param localFilePath 文件的本地路径
-  * @return UploadFileResultDto
-  */
- UploadFileResultDto uploadFile(UploadparamsDto uploadparamsDto, Long companyId, String localFilePath);
+    /**
+     * 上传文件
+     *
+     * @param uploadparamsDto 上传参数
+     * @param companyId       机构id
+     * @param localFilePath   文件的本地路径
+     * @return UploadFileResultDto
+     */
+    UploadFileResultDto uploadFile(UploadparamsDto uploadparamsDto, Long companyId, String localFilePath);
+
+    /**
+     * 上传文件前查询文件
+     * @param fileMd5 文件的MD5
+     * @return RestResponse<Boolean>
+     */
+    RestResponse<Boolean> checkFile(String fileMd5);
+
+    /**
+     * 上传分块前检测分块
+     * @param fileMd5 文件的md5值
+     * @param chunk 第？个分块
+     * @return RestResponse<Boolean>
+     */
+    RestResponse<Boolean> checkchunk(String fileMd5, int chunk);
+
+    /**
+     * 上传分块文件
+     * @param fileMd5 完整文件md5值
+     * @param chunk 上传的块文件
+     * @param localChunkFilePath 需上传的文件路径
+     * @return RestResponse
+     */
+    RestResponse uploadchunk(String fileMd5, int chunk, String localChunkFilePath);
+
+
+
 }

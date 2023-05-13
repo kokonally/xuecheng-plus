@@ -56,7 +56,7 @@ public class MediaFilesController {
 
 
             //创建临时文件
-            tempFile = File.createTempFile("minio", "temp");
+            tempFile = File.createTempFile("minio", ".temp");
             multipartFile.transferTo(tempFile);
 
             //获取文件的路径

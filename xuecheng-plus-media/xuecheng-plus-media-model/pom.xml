@@ -16,6 +16,12 @@
             <groupId>com.xuecheng</groupId>
             <artifactId>xuecheng-plus-base</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>druid-spring-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--存在mybatisplus注解添加相关注解保证不报错-->
         <dependency>
