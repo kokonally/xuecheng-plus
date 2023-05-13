@@ -44,7 +44,7 @@ public class MediaFilesController {
 
     @ApiOperation("上传图片")
     @RequestMapping(value = "/upload/coursefile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public UploadFileResultDto upload(@RequestParam("filedata")MultipartFile multipartFile) throws IOException {
+    public UploadFileResultDto upload(@RequestParam("filedata")MultipartFile multipartFile) {
 
         File tempFile = null;
         try {
@@ -67,7 +67,7 @@ public class MediaFilesController {
             return mediaFileService.uploadFile(uploadparamsDto, companyId, localFilePath);
         } catch (Exception e) {
             log.error("上传文件出现异常 ", e);
-            return null;
+            throw new RuntimeException(e);
         }  finally {
             if (tempFile != null && tempFile.exists()) {
                 tempFile.delete();
