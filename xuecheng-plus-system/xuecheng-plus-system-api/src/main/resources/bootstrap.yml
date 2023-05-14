@@ -12,10 +12,10 @@ spring:
     nacos:
       server-addr: 192.168.44.130:8848
       discovery:
-        namespace: dev
+        namespace: ${spring.profiles.active}
         group: xuecheng_plus-project
       config: #配置文件相关配置
-        namespace: dev
+        namespace: ${spring.profiles.active}
         group: xuecheng_plus-project
         file-extension: yaml
         refresh-enabled: true
