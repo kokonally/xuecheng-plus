@@ -65,6 +65,14 @@ public interface MediaFileService {
      */
     RestResponse uploadchunk(String fileMd5, int chunk, String localChunkFilePath);
 
-
+    /**
+     * 合并分块文件
+     * @param companyId 机构id
+     * @param fileMd5 文件的md5值
+     * @param chunkTotal 总的文件块数量
+     * @param uploadparamsDto 入库信息
+     * @return
+     */
+    RestResponse mergechunks(Long companyId, String fileMd5, int chunkTotal, UploadparamsDto uploadparamsDto);
 
 }

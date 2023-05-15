@@ -1,6 +1,7 @@
 package com.xuecheng.media.api;
 
 import com.xuecheng.base.model.RestResponse;
+import com.xuecheng.media.config.UploadparamsDto;
 import com.xuecheng.media.model.po.MediaFiles;
 import com.xuecheng.media.service.MediaFileService;
 import io.swagger.annotations.Api;
@@ -42,10 +43,19 @@ public class BigFilesController {
     public RestResponse uploadchunk(@RequestParam("file") MultipartFile file,
                                     @RequestParam("fileMd5") String fileMd5,
                                     @RequestParam("chunk") int chunk) throws IOException {
-        File tempFile = File.createTempFile("minio", ".temp");
-        file.transferTo(tempFile);
-        String localFilePath = tempFile.getAbsolutePath();
-        return mediaFileService.uploadchunk(fileMd5, chunk, localFilePath);
+
+        File tempFile = null;
+        try {
+            tempFile = File.createTempFile("minio", ".temp");
+            file.transferTo(tempFile);
+            String localFilePath = tempFile.getAbsolutePath();
+            return mediaFileService.uploadchunk(fileMd5, chunk, localFilePath);
+        } finally {
+            //清理本地缓存
+            if (tempFile != null && tempFile.exists()) {
+                tempFile.delete();
+            }
+        }
     }
 
     @ApiOperation("合并文件")
@@ -54,7 +64,13 @@ public class BigFilesController {
                                     @RequestParam("fileName") String fileName,
                                     @RequestParam("chunkTotal") int chunkTotal) {
 
-        return null;
+        Long companyId = 1232141425L;
+        UploadparamsDto uploadparamsDto = new UploadparamsDto();
+        uploadparamsDto.setFilename(fileName);
+        uploadparamsDto.setTags("视频文件");
+        uploadparamsDto.setFileType("001002");
+        return mediaFileService.mergechunks(companyId, fileMd5, chunkTotal, uploadparamsDto);
+
     }
 
 }
