@@ -13,9 +13,11 @@ import com.xuecheng.base.model.PageResult;
 import com.xuecheng.base.model.RestResponse;
 import com.xuecheng.media.config.UploadparamsDto;
 import com.xuecheng.media.mapper.MediaFilesMapper;
+import com.xuecheng.media.mapper.MediaProcessMapper;
 import com.xuecheng.media.model.dto.QueryMediaParamsDto;
 import com.xuecheng.media.model.dto.UploadFileResultDto;
 import com.xuecheng.media.model.po.MediaFiles;
+import com.xuecheng.media.model.po.MediaProcess;
 import com.xuecheng.media.service.MediaFileService;
 import io.minio.*;
 import io.minio.errors.*;
@@ -64,6 +66,9 @@ public class MediaFileServiceImpl implements MediaFileService {
 
     @Value("${minio.bucket.videofiles}")
     private String video;  //存储视频
+
+    @Autowired
+    private MediaProcessMapper mediaProcessMapper;
 
 
     @Override
@@ -200,6 +205,7 @@ public class MediaFileServiceImpl implements MediaFileService {
                 .sources(sources)
                 .build();
         try {
+            //合并分块
             minioClient.composeObject(args);
             //获取文件大小
             StatObjectArgs statObjectArgs = StatObjectArgs.builder()
@@ -300,6 +306,7 @@ public class MediaFileServiceImpl implements MediaFileService {
 
     /**
      * 获取分块文件所在的文件夹
+     *
      * @param fileMd5 文件的md5值
      * @return /5/a/(md5)/chunk/
      */
@@ -347,7 +354,31 @@ public class MediaFileServiceImpl implements MediaFileService {
             log.debug("向数据库保存文件信息失败，bucket:{}, objectName:{}", bucket, objectFileName);
             return null;
         }
+
+        //记录待处理任务
+        this.addWaitingTask(mediaFiles);
+
+
         return mediaFiles;
+    }
+
+    /**
+     * 将文件信息插入到待处理的表
+     *
+     * @param mediaFiles 文件信息
+     */
+    private void addWaitingTask(MediaFiles mediaFiles) {
+        //1.获取文件的mimeType
+        String filename = mediaFiles.getFilename();
+        String mimeType = this.getMimeType(this.getExtension(filename));
+        if (this.getMimeType(".avi").equals(mimeType)) {
+            //2.是（AVI视频）向mediaprocess 插入记录
+            MediaProcess mediaProcess = new MediaProcess();
+            BeanUtils.copyProperties(mediaFiles, mediaProcess);
+            mediaProcess.setStatus("1");
+            mediaProcess.setCreateDate(LocalDateTime.now());
+            mediaProcess.setFailCount(0);
+        }
     }
 
 
