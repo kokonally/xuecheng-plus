@@ -160,19 +160,29 @@ public class MediaFileServiceImpl implements MediaFileService {
         String chunkPath = this.getChunkPath(fileMd5, chunk);
 
         //2.查询minio
-        GetObjectArgs args = GetObjectArgs.builder()
+//        GetObjectArgs args = GetObjectArgs.builder()
+//                .bucket(video)
+//                .object(chunkPath)
+//                .build();
+//        try (FilterInputStream inputStream = minioClient.getObject(args)) {
+//
+//            if (inputStream != null) {
+//                return RestResponse.success(true);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        StatObjectArgs args = StatObjectArgs.builder()
                 .bucket(video)
                 .object(chunkPath)
                 .build();
-        try (FilterInputStream inputStream = minioClient.getObject(args)) {
-            if (inputStream != null) {
-                return RestResponse.success(true);
-            }
+        try {
+            minioClient.statObject(args);
+            //文件存在
+            return RestResponse.success(true);
         } catch (Exception e) {
-            e.printStackTrace();
+            return RestResponse.success(false);
         }
-
-        return RestResponse.success(false);
     }
 
     @Override
@@ -192,7 +202,7 @@ public class MediaFileServiceImpl implements MediaFileService {
     public RestResponse mergechunks(Long companyId, String fileMd5, int chunkTotal, UploadparamsDto uploadparamsDto) {
         //1.合并文件
         //找出所有的分块文件
-        List<ComposeSource> sources = Stream.iterate(0, i -> i++)
+        List<ComposeSource> sources = Stream.iterate(0, i -> i + 1)
                 .limit(chunkTotal)
                 .map(i -> ComposeSource.builder().bucket(video).object(getChunkPath(fileMd5, i)).build())
                 .collect(Collectors.toList());
@@ -207,6 +217,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         try {
             //合并分块
             minioClient.composeObject(args);
+            log.debug("合并文件成功,bucket:{}, objectName:{}", video, objectName);
             //获取文件大小
             StatObjectArgs statObjectArgs = StatObjectArgs.builder()
                     .bucket(video)
@@ -224,6 +235,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         String minioFileMd5 = this.getMinioFileMd5(objectName, video);
         if (!fileMd5.equals(minioFileMd5)) {
             //不完整
+            log.debug("文件校验失败, bucket:{}, objectName:{},在minio的MD5:{},正确MD5:{}", video, objectName, minioFileMd5, fileMd5);
             return RestResponse.validfail(false, "文件校验失败");
         }
 
@@ -238,6 +250,30 @@ public class MediaFileServiceImpl implements MediaFileService {
         this.clearChunkFiles(this.getChunkPath(fileMd5), chunkTotal, video);
 
         return RestResponse.success(true);
+    }
+
+    @Override
+    public File downloadFileFromMinio(String bucket, String objectName) {
+        GetObjectArgs args = GetObjectArgs.builder()
+                .bucket(bucket)
+                .object(objectName)
+                .build();
+
+
+        try (FilterInputStream inputStream = minioClient.getObject(args);) {
+            File tempFile = File.createTempFile("minio", "temp");
+
+            try (OutputStream outputStream = new FileOutputStream(tempFile)) {
+                IoUtil.copy(inputStream, outputStream, 1024);
+                return tempFile;
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (Exception e) {
+            log.error("从minio下载文件失败，bucket:{}, objectName:{}, 错误信息:{}", bucket, objectName, e);
+            return null;
+        }
+
     }
 
     /**
@@ -272,7 +308,8 @@ public class MediaFileServiceImpl implements MediaFileService {
      */
     private void clearChunkFiles(String chunkFileFolderPath, int chunkTotal, String bucket) {
 
-        Iterable<DeleteObject> objects = Stream.iterate(0, i -> i++).limit(chunkTotal)
+
+        Iterable<DeleteObject> objects = Stream.iterate(0, i -> i + 1).limit(chunkTotal)
                 .map(i -> new DeleteObject(chunkFileFolderPath + i)).collect(Collectors.toList());
 
         RemoveObjectsArgs args = RemoveObjectsArgs.builder()
@@ -284,6 +321,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         results.forEach(item -> {
             try {
                 item.get();
+                log.debug("清理分块成功:{}", item);
             } catch (Exception e) {
                 log.error("分块清理失败，块文件所在的目录:{}, 错误信息:{}", chunkFileFolderPath, e);
             }
@@ -371,13 +409,14 @@ public class MediaFileServiceImpl implements MediaFileService {
         //1.获取文件的mimeType
         String filename = mediaFiles.getFilename();
         String mimeType = this.getMimeType(this.getExtension(filename));
-        if (this.getMimeType(".avi").equals(mimeType)) {
-            //2.是（AVI视频）向mediaprocess 插入记录
+        if (mimeType.contains("video")) {
+            //2.是视频文件向mediaprocess 插入记录
             MediaProcess mediaProcess = new MediaProcess();
-            BeanUtils.copyProperties(mediaFiles, mediaProcess);
+            BeanUtils.copyProperties(mediaFiles, mediaProcess, "url");
             mediaProcess.setStatus("1");
             mediaProcess.setCreateDate(LocalDateTime.now());
             mediaProcess.setFailCount(0);
+            mediaProcessMapper.insert(mediaProcess);
         }
     }
 
@@ -398,7 +437,8 @@ public class MediaFileServiceImpl implements MediaFileService {
      *
      * @return mimeType
      */
-    private String getMimeType(String extensionName) {
+    @Override
+    public String getMimeType(String extensionName) {
         if (extensionName == null) {
             extensionName = "";
         }
@@ -420,8 +460,9 @@ public class MediaFileServiceImpl implements MediaFileService {
      * @param mimeType       文件类型
      * @return true上传成功 false上传失败
      */
-    private boolean upload2minio(String localFilePath, String objectFilePath,
-                                 MinioClient minioClient, String bucket, String mimeType) {
+    @Override
+    public boolean upload2minio(String localFilePath, String objectFilePath,
+                                MinioClient minioClient, String bucket, String mimeType) {
         try {
             UploadObjectArgs args = UploadObjectArgs.builder()
                     .bucket(bucket)

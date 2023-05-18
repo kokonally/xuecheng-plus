@@ -2,13 +2,21 @@ package com.xuecheng.media;
 
 import com.j256.simplemagic.ContentInfo;
 import com.j256.simplemagic.ContentInfoUtil;
+import com.xuecheng.media.mapper.MediaProcessMapper;
+import com.xuecheng.media.model.po.MediaProcess;
 import com.xuecheng.media.service.impl.MediaFileServiceImpl;
 import io.minio.MinioClient;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Method;
-
+import java.util.List;
+@SpringBootTest
 public class MinioTest {
+    @Autowired
+    private MediaProcessMapper mediaProcessMapper;
 
     MinioClient minioClient = MinioClient
             .builder()
@@ -42,5 +50,11 @@ public class MinioTest {
         getExtension.setAccessible(true);
         String mimeType = (String) getExtension.invoke(mediaFileService, ".mp4");
         System.out.println("mimeType = " + mimeType);
+    }
+
+    @Test
+    void MediaProcessMapperTest() {
+        List<MediaProcess> mediaProcesses = mediaProcessMapper.selectListByShardIndex(1, 0, 2);
+        System.out.println("mediaProcesses = " + mediaProcesses);
     }
 }

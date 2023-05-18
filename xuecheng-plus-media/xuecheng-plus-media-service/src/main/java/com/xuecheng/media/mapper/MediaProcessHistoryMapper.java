@@ -2,6 +2,8 @@ package com.xuecheng.media.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xuecheng.media.model.po.MediaProcessHistory;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>
@@ -10,6 +12,7 @@ import com.xuecheng.media.model.po.MediaProcessHistory;
  *
  * @author itcast
  */
+@Mapper
 public interface MediaProcessHistoryMapper extends BaseMapper<MediaProcessHistory> {
 
 }

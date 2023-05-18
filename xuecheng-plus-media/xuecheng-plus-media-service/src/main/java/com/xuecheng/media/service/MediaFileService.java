@@ -7,10 +7,12 @@ import com.xuecheng.media.config.UploadparamsDto;
 import com.xuecheng.media.model.dto.QueryMediaParamsDto;
 import com.xuecheng.media.model.dto.UploadFileResultDto;
 import com.xuecheng.media.model.po.MediaFiles;
+import io.minio.MinioClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -74,5 +76,33 @@ public interface MediaFileService {
      * @return
      */
     RestResponse mergechunks(Long companyId, String fileMd5, int chunkTotal, UploadparamsDto uploadparamsDto);
+
+    /**
+     * 从minio下载文件
+     * @param bucket 桶
+     * @param objectName 文件名称
+     * @return file
+     */
+    File downloadFileFromMinio(String bucket, String objectName);
+
+    /**
+     * 上传文件到minio
+     *
+     * @param localFilePath  源文件路径
+     * @param objectFilePath 在minio文件的路径
+     * @param minioClient    minio客户端
+     * @param bucket         指定上传到的桶
+     * @param mimeType       文件类型
+     * @return true上传成功 false上传失败
+     */
+    public boolean upload2minio(String localFilePath, String objectFilePath,
+                                MinioClient minioClient, String bucket, String mimeType);
+
+    /**
+     * 获取mimeType
+     * @param extensionName 后缀名称
+     * @return mimeType
+     */
+    public String getMimeType(String extensionName);
 
 }
