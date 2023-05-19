@@ -124,6 +124,15 @@ public class TeachplanServiceImpl implements TeachplanService {
         teachplanMediaMapper.insert(teachplanMedia);
     }
 
+    @Override
+    @Transactional
+    public void deleteAssociationMedia(Long teachPlanId, Long mediaId) {
+        LambdaQueryWrapper<TeachplanMedia> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(TeachplanMedia::getTeachplanId, teachPlanId);
+        queryWrapper.eq(TeachplanMedia::getMediaId, mediaId);
+        teachplanMediaMapper.delete(queryWrapper);
+    }
+
     /**
      * 课程下移
      * @param teachplanId 课程计划id
