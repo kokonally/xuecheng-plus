@@ -72,6 +72,11 @@ public class MediaFileServiceImpl implements MediaFileService {
 
 
     @Override
+    public MediaFiles getFileById(String mediaId) {
+        return mediaFilesMapper.selectById(mediaId);
+    }
+
+    @Override
     public PageResult<MediaFiles> queryMediaFiels(Long companyId, PageParams pageParams, QueryMediaParamsDto queryMediaParamsDto) {
 
         //构建查询条件对象
@@ -378,7 +383,10 @@ public class MediaFileServiceImpl implements MediaFileService {
         //file_id
         mediaFiles.setFileId(fileMD5);
         //url
-        mediaFiles.setUrl("/" + bucket + "/" + objectFileName);
+        if ("001001".equals(mediaFiles.getFileType())) {
+            //图片，设置访问URL
+            mediaFiles.setUrl("/" + bucket + "/" + objectFileName);
+        }
         //上传时间
         mediaFiles.setCreateDate(LocalDateTime.now());
         //状态
