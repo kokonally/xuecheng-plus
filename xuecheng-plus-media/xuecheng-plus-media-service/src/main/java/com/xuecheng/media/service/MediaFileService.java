@@ -105,4 +105,6 @@ public interface MediaFileService {
      */
     public String getMimeType(String extensionName);
 
+    public String getExtension(String orginName);
+
 }

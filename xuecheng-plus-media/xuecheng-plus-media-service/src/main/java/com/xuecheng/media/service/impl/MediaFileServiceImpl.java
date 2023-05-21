@@ -486,7 +486,8 @@ public class MediaFileServiceImpl implements MediaFileService {
      * @param orginName 原始文件名称（或者路径）
      * @return 扩展名
      */
-    private String getExtension(String orginName) {
+    @Override
+    public String getExtension(String orginName) {
         return orginName.substring(orginName.lastIndexOf("."));
     }
 }

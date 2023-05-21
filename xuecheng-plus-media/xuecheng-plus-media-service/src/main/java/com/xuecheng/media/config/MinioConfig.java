@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * minio配置类
  */
@@ -20,7 +23,9 @@ public class MinioConfig {
     private String secretKey;
 
     @Bean
-    public MinioClient minioClient() {
-        return MinioClient.builder().endpoint(endpoint).credentials(accessKey, secretKey).build();
+    public MinioClient minioClient() throws NoSuchAlgorithmException, KeyManagementException {
+        MinioClient minioClient = MinioClient.builder().endpoint(endpoint).credentials(accessKey, secretKey).build();
+        minioClient.ignoreCertCheck();
+        return minioClient;
     }
 }

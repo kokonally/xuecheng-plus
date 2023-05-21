@@ -77,14 +77,21 @@ public class VideoTaskJob {
                         return;
                     }
                     log.debug("抢到任务:{}", mediaProcess.getId());
+                    String filename = mediaProcess.getFilename();
+                    String bucket = mediaProcess.getBucket();
+                    String fileId = mediaProcess.getFileId();
+                    String mp4_objectName = fileId.charAt(0) + "/" + fileId.charAt(1) + "/" + fileId + "/" + fileId + ".mp4";
+                    if (".mp4".equals(mediaFileService.getExtension(filename))) {
+                        //是mp4，无需转码
+                        String url = "/" + bucket + "/" + mp4_objectName;  //新的URL
+                        mediaFileProcessService.saveProcessFinishStatus(taskId, "2", fileId, url, null);
+                        return;
+                    }
 
                     //3.开始视频转码
                     //下载视频文件
-                    String bucket = mediaProcess.getBucket();
                     String objectName = mediaProcess.getFilePath();
                     File downFile = mediaFileService.downloadFileFromMinio(bucket, objectName);
-                    String filename = mediaProcess.getFilename();
-                    String fileId = mediaProcess.getFileId();
                     if (downFile == null || !downFile.exists()) {
                         log.error("从minio下载视频错误, 任务id:{}, bucket:{}, objectName:{}", taskId, bucket, objectName);
                         //上传失败消息到数据库
@@ -126,7 +133,6 @@ public class VideoTaskJob {
                     //转换成功
                     //4.上传文件到minio
                     //生成新的objectName
-                    String mp4_objectName = fileId.charAt(0) + "/" + fileId.charAt(1) + "/" + fileId + "/" + fileId + ".mp4";
                     try {
                         boolean isUplocadSuccess = mediaFileService.upload2minio(mp4_path, mp4_objectName,
                                 minioClient, bucket,
