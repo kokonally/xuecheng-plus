@@ -59,6 +59,10 @@ public class CoursePublishServiceImpl implements CoursePublishService {
         List<TeachplanDto> teachplanTree = teachplanService.findTeachplanTree(courseId);
         coursePreviewDto.setTeachplans(teachplanTree);
 
+        //3.查询课程教师信息
+        List<CourseTeacher> teachers = courseTeacherService.list(courseId);
+        coursePreviewDto.setTeachers(teachers);
+
         return coursePreviewDto;
     }
 

@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-
 @Api(value = "课程发布相关接口", tags = "课程发布相关接口")
 @Controller
 public class CoursePublishController {
