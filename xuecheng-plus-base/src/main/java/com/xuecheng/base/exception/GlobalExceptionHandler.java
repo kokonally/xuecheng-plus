@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
         String errMessage = StringUtils.join(errors, ",");
 
         //记录异常
-        log.error("系统异常{}", e.getMessage(), errMessage);
+        log.error("数据参数非法:{}", e.getMessage(), errMessage);
 
         return new RestErrorResponse(errMessage);
     }

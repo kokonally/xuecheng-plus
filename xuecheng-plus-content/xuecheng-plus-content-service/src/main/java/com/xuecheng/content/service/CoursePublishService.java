@@ -14,4 +14,10 @@ public interface CoursePublishService {
      * @return com.xuecheng.content.model.dto.CoursePreviewDto
      */
     CoursePreviewDto getCoursePreviewInfo(Long courseId);
+
+    /**
+     * 提交课程审核
+     * @param courseId 需要提交审核的课程id
+     */
+    void commitAudit(Long courseId, Long companyId);
 }
