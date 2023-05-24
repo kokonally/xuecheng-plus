@@ -25,7 +25,7 @@ import io.minio.messages.DeleteError;
 import io.minio.messages.DeleteObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,15 +97,23 @@ public class MediaFileServiceImpl implements MediaFileService {
     }
 
     @Override
-    public UploadFileResultDto uploadFile(UploadparamsDto uploadparamsDto, Long companyId, String localFilePath) {
+    public UploadFileResultDto uploadFile(UploadparamsDto uploadparamsDto, Long companyId, String localFilePath, String objectName) {
         //1.将文件上传到minio
         String extension = this.getExtension(uploadparamsDto.getFilename());  //获取到文件扩展名
         String mimeType = this.getMimeType(extension);  //获取文件的mimeType类型
+
         //生成minio上的路径 以年月日下存储
         String dateTimePath = this.getDateTimePath();
+
         //获取objectFileName
         String md5 = DigestUtil.md5Hex(new File(localFilePath));
-        String objectFileName = dateTimePath + md5 + extension;
+        String objectFileName;
+        if (StringUtils.isEmpty(objectName)) {
+            //使用默认的年月日
+            objectFileName = dateTimePath + md5 + extension;
+        } else {
+            objectFileName = objectName;
+        }
 
         //判断在数据库中文件是否存在
         MediaFiles mediaFilesFromDb = mediaFilesMapper.selectById(md5);

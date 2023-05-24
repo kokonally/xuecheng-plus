@@ -46,9 +46,10 @@ public interface MediaFileService {
      * @param uploadparamsDto 上传参数
      * @param companyId       机构id
      * @param localFilePath   文件的本地路径
+     * @param objectName   文件的需要上传的路径 如果传入了objectName了就按照objectName来存储
      * @return UploadFileResultDto
      */
-    UploadFileResultDto uploadFile(UploadparamsDto uploadparamsDto, Long companyId, String localFilePath);
+    UploadFileResultDto uploadFile(UploadparamsDto uploadparamsDto, Long companyId, String localFilePath, String objectName);
 
     /**
      * 上传文件前查询文件

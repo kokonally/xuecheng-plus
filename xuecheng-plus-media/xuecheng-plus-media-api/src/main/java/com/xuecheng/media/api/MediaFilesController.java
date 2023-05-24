@@ -44,7 +44,8 @@ public class MediaFilesController {
 
     @ApiOperation("上传图片")
     @RequestMapping(value = "/upload/coursefile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public UploadFileResultDto upload(@RequestParam("filedata")MultipartFile multipartFile) {
+    public UploadFileResultDto upload(@RequestParam("filedata")MultipartFile multipartFile,
+                                      @RequestParam(value = "objectName", required = false) String objectName) {
 
         File tempFile = null;
         try {
@@ -64,7 +65,7 @@ public class MediaFilesController {
 
             //调用service上传图片
             Long companyId = 12321441425L;
-            return mediaFileService.uploadFile(uploadparamsDto, companyId, localFilePath);
+            return mediaFileService.uploadFile(uploadparamsDto, companyId, localFilePath, objectName);
         } catch (Exception e) {
             log.error("上传文件出现异常 ", e);
             throw new RuntimeException(e);
