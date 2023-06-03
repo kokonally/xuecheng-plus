@@ -65,8 +65,12 @@ public interface MqMessageService extends IService<MqMessage> {
      * @date 2022/9/21 20:54
     */
     public int getStageOne(long id);
+    public int getStageOne(String businessKey1, String businessKey2, String businessKey3);
     public int getStageTwo(long id);
+    public int getStageTwo(String businessKey1, String businessKey2, String businessKey3);
     public int getStageThree(long id);
+    public int getStageThree(String businessKey1, String businessKey2, String businessKey3);
     public int getStageFour(long id);
+    public int getStageFour(String businessKey1, String businessKey2, String businessKey3);
 
 }

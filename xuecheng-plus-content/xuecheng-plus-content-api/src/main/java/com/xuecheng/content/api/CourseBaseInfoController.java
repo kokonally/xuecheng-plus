@@ -3,6 +3,7 @@ package com.xuecheng.content.api;
 import com.xuecheng.base.exception.ValidationGroups;
 import com.xuecheng.base.model.PageParams;
 import com.xuecheng.base.model.PageResult;
+import com.xuecheng.base.utils.SecurityUtil;
 import com.xuecheng.content.model.dto.AddCourseDto;
 import com.xuecheng.content.model.dto.CourseBaseInfoDto;
 import com.xuecheng.content.model.dto.EditCourseDto;
@@ -11,7 +12,11 @@ import com.xuecheng.content.model.po.CourseBase;
 import com.xuecheng.content.service.CourseBaseInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +35,14 @@ public class CourseBaseInfoController {
 
     @ApiOperation("课程查询接口")
     @PostMapping("/course/list")
+    @PreAuthorize("hasAnyAuthority('xc_teachmanager_course_list')")  //指定权限标识符
     public PageResult<CourseBase> list(PageParams pageParams, @RequestBody(required=false) QueryCourseParamsDto queryCourseParamsDto) {
-        return courseBaseInfoService.queryCourseBaseList(pageParams, queryCourseParamsDto);
+        Long companyId = null;
+        SecurityUtil.XcUser user = SecurityUtil.getUser();
+        if (StringUtils.isNotEmpty(user.getCompanyId())) {
+            companyId = Long.valueOf(user.getCompanyId());
+        }
+        return courseBaseInfoService.queryCourseBaseList(companyId, pageParams, queryCourseParamsDto);
     }
 
     @ApiOperation("新增课程接口")
@@ -47,6 +58,10 @@ public class CourseBaseInfoController {
     @ApiOperation("根据课程id查询接口")
     @GetMapping("/course/{courseId}")
     public CourseBaseInfoDto getCourseBaseById(@PathVariable("courseId") Long courseId) {
+        //获取当前用户的身份
+        SecurityUtil.XcUser user = SecurityUtil.getUser();
+        String username = user.getUsername();
+        System.out.println("username = " + username);
         return courseBaseInfoService.getCourseBaseInfo(courseId);
     }
 

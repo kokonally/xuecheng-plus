@@ -24,7 +24,7 @@
         <div class="banner-bg"></div>
         <div class="banner-info">
             <div class="banner-left">
-                <p>${model.courseBase.mtName!''}<span>\ ${model.courseBase.stName}</span></p>
+                <p>${model.courseBase.mtName}<span>\ ${model.courseBase.stName}</span></p>
                 <p class="tit">${model.courseBase.name}</p>
                 <p class="pic">
                     <#if model.courseBase.charge=='201000'>
@@ -107,28 +107,21 @@
                             </div>
                             <div class="content-com course">
                                 <div class="title"><span>课程制作</span></div>
-                                <#list model.teachers as teacher>
-                                    <div class="cont">
-                                        <#--                                <div class="img-box"><img src="/static/img/widget-myImg.jpg" alt=""></div>-->
-
-                                        <div class="img-box"><img src=http://file.51xuecheng.cn${teacher.photograph} alt="" width="135" height="92"></div>
-                                        <div class="info-box">
-                                            <p class="name">教学方：<em>${teacher.teacherName}</em></p>
-                                            <p class="info">${teacher.introduction}</p>
-                                        </div>
-
-                                        <#--                                <div class="info-box">-->
-                                        <#--                                    <p class="name">教学方：<em>XX老师</em></p>-->
-                                        <#--                                    <!-- <p class="lab">高级前端开发工程师 10年开发经验</p>&ndash;&gt;-->
-                                        <#--                                    <p class="info">JavaEE开发与教学多年，精通JavaEE技术体系，对流行框架JQuery、DWR、Struts1/2，Hibernate，Spring，MyBatis、JBPM、Lucene等有深入研究。授课逻辑严谨，条理清晰，注重学生独立解决问题的能力。</p>-->
-                                        <#--                                    <!-- <p><span>难度等级</span>中级</p>-->
-                                        <#--                                     <p><span>课程时长</span>8-16小时/周，共4周</p>-->
-                                        <#--                                     <p><span>如何通过</span>通过所有的作业及考核，作业共4份，考核为一次终极考核</p>-->
-                                        <#--                                     <p><span>用户评分</span>平均用户评分 <em>4.9</em> <a href="#">查看全部评价</a></p>-->
-                                        <#--                                     <p><span>课程价格</span>特惠价格<em>￥999</em> <i> 原价1999 </i></p>&ndash;&gt;-->
-                                        <#--                                </div>-->
+                                <div class="cont">
+                                    <div class="img-box"><img src="/static/img/widget-myImg.jpg" alt=""></div>
+                                    <div class="info-box">
+                                        <p class="name">教学方：<em>XX老师</em></p>
+                                        <!-- <p class="lab">高级前端开发工程师 10年开发经验</p>-->
+                                        <p class="info">
+                                            JavaEE开发与教学多年，精通JavaEE技术体系，对流行框架JQuery、DWR、Struts1/2，Hibernate，Spring，MyBatis、JBPM、Lucene等有深入研究。授课逻辑严谨，条理清晰，注重学生独立解决问题的能力。</p>
+                                        <!-- <p><span>难度等级</span>中级</p>
+                                         <p><span>课程时长</span>8-16小时/周，共4周</p>
+                                         <p><span>如何通过</span>通过所有的作业及考核，作业共4份，考核为一次终极考核</p>
+                                         <p><span>用户评分</span>平均用户评分 <em>4.9</em> <a href="#">查看全部评价</a></p>
+                                         <p><span>课程价格</span>特惠价格<em>￥999</em> <i> 原价1999 </i></p>-->
                                     </div>
-                                </#list>
+                                </div>
+
                             </div>
                             <div class="content-com about">
                                 <div class="title"><span>课程介绍</span></div>

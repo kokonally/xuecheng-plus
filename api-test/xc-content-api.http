@@ -1,5 +1,6 @@
 ###查询课程基本信息
 POST http://{{gateway_host}}/content/course/list?pageNo=1&pageSize=2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
 Content-Type: application/json
 
 {
@@ -36,10 +37,11 @@ Content-Type: application/json
 
 ###根据课程id查询课程信息
 GET http://{{content_host}}/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJjb21wYW55SWRcIjpcIjEyMzIxNDE0MjVcIixcImNyZWF0ZVRpbWVcIjpcIjIwMjItMDktMjhUMDg6MzI6MDNcIixcImlkXCI6XCI1MlwiLFwibmFtZVwiOlwiTeiAgeW4iFwiLFwic2V4XCI6XCIxXCIsXCJzdGF0dXNcIjpcIlwiLFwidXNlcm5hbWVcIjpcInQxXCIsXCJ1dHlwZVwiOlwiMTAxMDAyXCJ9Iiwic2NvcGUiOlsiYWxsIl0sImV4cCI6MTY4NTE3Njc5MSwiYXV0aG9yaXRpZXMiOlsidGVzdCJdLCJqdGkiOiIwOWQ2ZmI0Zi1mZTUwLTQ1NjYtYjY4Yy0yN2NmYTQ2NmQxZmYiLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.iESWlYypbsC0dKwbXtO5n0zUEP5W2s2Pe5-KMzIbT5w
 Content-Type: application/json
 
 ###根据课程id查询课程计划
-GET http://{{content_host}}/content/teachplan/117/tree-nodes
+GET http://{{gateway_host}}/content/teachplan/117/tree-nodes
 Content-Type: application/json
 
 ### 删除课程计划

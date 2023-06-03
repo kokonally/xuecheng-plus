@@ -10,6 +10,16 @@
     <artifactId>xuecheng-plus-content-api</artifactId>
     <dependencies>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+
         <!--   向Nacos上报服务     -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

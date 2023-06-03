@@ -26,6 +26,7 @@ public class MinioConfig {
     public MinioClient minioClient() throws NoSuchAlgorithmException, KeyManagementException {
         MinioClient minioClient = MinioClient.builder().endpoint(endpoint).credentials(accessKey, secretKey).build();
         minioClient.ignoreCertCheck();
+
         return minioClient;
     }
 }

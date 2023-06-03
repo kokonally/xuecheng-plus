@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)  //状态码500
     public RestErrorResponse customException(XueChengPlusException e) {
         //记录异常
-        log.error("系统异常{}", e.getErrMessage(), e);
+        log.error("系统异常:{}", e.getErrMessage(), e);
 
         //解析出异常信息
         String errMessage = e.getErrMessage();
@@ -49,7 +49,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public DeleteErrorResponse DeleteErrorException(DeleteErrorException exception) {
         //1.记录异常
-        log.error("删除操作异常 {}", exception.getMessage(), exception);
+        log.error("删除操作异常:{}", exception.getMessage(), exception);
 
         //2.返回异常结果
         return DeleteErrorResponse.createDeleteErrorResponse(exception);
@@ -70,8 +70,10 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)  //状态码500
     public RestErrorResponse customException(Exception e) {
         //记录异常
-        log.error("系统异常{}", e.getMessage(), e);
-
+        log.error("系统异常:{}", e.getMessage(), e);
+        if("不允许访问".equals(e.getMessage())){
+            return new RestErrorResponse("没有操作此功能的权限");
+        }
         //解析出异常信息
         return new RestErrorResponse(CommonError.UNKOWN_ERROR.getErrMessage());
     }

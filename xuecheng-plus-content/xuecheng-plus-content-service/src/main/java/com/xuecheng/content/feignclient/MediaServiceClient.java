@@ -11,7 +11,9 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * 远程调用媒资服务接口
  */
-@FeignClient(value = "media-api", configuration = {MultipartSupportConfig.class})
+@FeignClient(value = "media-api",
+        configuration = {MultipartSupportConfig.class},
+        fallbackFactory = MediaServiceClientFallbackFactroy.class)
 public interface MediaServiceClient {
 
     @PostMapping(value = "/media/upload/coursefile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)

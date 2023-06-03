@@ -1,138 +1,362 @@
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63075/checkcode/verify?key=checkcode:a4f064c0d2534766ae228440a34df9cc&code=fgly
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T154114.500.json
+<> 2023-05-27T165820.200.json
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63075/checkcode/pic
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T151052.200.json
+<> 2023-05-27T165747.200.json
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63075/checkcode/verify?key=checkcode4506b95bddbe46cdb0d56810b747db1b&code=70dl
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
+<> 2023-05-27T165743.200.json
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63075/checkcode/pic
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T145723.200.json
+<> 2023-05-27T165349.200.json
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username={"userName": "t1","password": "111111","authType": "password"}
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T145421.200.json
+<> 2023-05-27T160215.401.json
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username={"userName": "t1","password": "111111","authType": "password"}
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T145306.200.json
+<> 2023-05-27T160117.401.json
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username={"userName": "t1","password": "111111","authType": "password"}
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T144518.200.json
+<> 2023-05-27T160100.401.json
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username={
+"userName": "t1",
+"password": "111111",
+"authType": "password"
+}:
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T144059.200.json
+<> 2023-05-27T160011.400.html
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username={
+"userName": "t1",
+"password": "111111",
+"authType": "password"
+}&password=111111:
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
-
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
-
-<> 2023-05-10T143814.500.json
+<> 2023-05-27T155847.400.html
 
 ###
 
-POST http://localhost:63050/media/upload/coursefile
-Content-Type: multipart/form-data; boundary=WebAppBoundary
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username={
+"userName": "t1",
+"password": "111111",
+"authType": "password"
+}&password=111111:
 
---WebAppBoundary
-Content-Disposition: form-data; name="filedata"; filename="微信图片_20230105225220.jpg"
-Content-Type: application/octet-stream
+<> 2023-05-27T155809.400.html
 
-< C:\Users\sheng\Desktop\微信图片_20230105225220.jpg
---WebAppBoundary--
+###
 
-<> 2023-05-10T143524.500.json
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJjb21wYW55SWRcIjpcIjEyMzIxNDE0MjVcIixcImNyZWF0ZVRpbWVcIjpcIjIwMjItMDktMjhUMDg6MzI6MDNcIixcImlkXCI6XCI1MlwiLFwibmFtZVwiOlwiTeiAgeW4iFwiLFwic2V4XCI6XCIxXCIsXCJzdGF0dXNcIjpcIlwiLFwidXNlcm5hbWVcIjpcInQxXCIsXCJ1dHlwZVwiOlwiMTAxMDAyXCJ9Iiwic2NvcGUiOlsiYWxsIl0sImV4cCI6MTY4NTE3Njc5MSwiYXV0aG9yaXRpZXMiOlsidGVzdCJdLCJqdGkiOiIwOWQ2ZmI0Zi1mZTUwLTQ1NjYtYjY4Yy0yN2NmYTQ2NmQxZmYiLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.iESWlYypbsC0dKwbXtO5n0zUEP5W2s2Pe5-KMzIbT5w
+Content-Type: application/json
+
+<> 2023-05-27T144101.200.json
+
+###
+
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=t1&password=111111
+
+<> 2023-05-27T143951.200.json
+
+###
+
+POST http://localhost:63070/auth/oauth/check_token?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJjb21wYW55SWRcIjpcIjEyMzIxNDE0MjVcIixcImNyZWF0ZVRpbWVcIjpcIjIwMjItMDktMjhUMDg6MzI6MDNcIixcImlkXCI6XCI1MlwiLFwibmFtZVwiOlwiTeiAgeW4iFwiLFwic2V4XCI6XCIxXCIsXCJzdGF0dXNcIjpcIlwiLFwidXNlcm5hbWVcIjpcInQxXCIsXCJ1dHlwZVwiOlwiMTAxMDAyXCJ9Iiwic2NvcGUiOlsiYWxsIl0sImV4cCI6MTY4NTExOTY4MCwiYXV0aG9yaXRpZXMiOlsidGVzdCJdLCJqdGkiOiJjMGU3ODA0Mi1mY2U0LTQ0NDEtOTMwYS0wYzEwNDdmMzNlMWQiLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.qTDXJjoTmQHhkoO0H6LZPiMw-WHFOyhTFSkq6YOliZk
+
+<> 2023-05-26T224819.200.json
+
+###
+
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=t1&password=111111
+
+<> 2023-05-26T224801.200.json
+
+###
+
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=t1&password=1111112
+
+<> 2023-05-26T222957.400.json
+
+###
+
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=t1&password=111111
+
+<> 2023-05-26T222943.200.json
+
+###
+
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=ti&password=111111
+
+<> 2023-05-26T222935.401.json
+
+###
+
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
+
+<> 2023-05-26T222909.401.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214917.401.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214913.200.json
+
+###
+
+GET http://localhost:63040/content/teachplan/117/tree-nodes
+Content-Type: application/json
+
+<> 2023-05-26T214857.200.json
+
+###
+
+GET http://localhost:63010/content/course/40
+Authorization: bearer ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214552.401.json
+
+###
+
+GET http://localhost:63010/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214536.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214511.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214354.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214339.401.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214045.401.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214037.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T214014.200.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Authorization: bearer ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-26T214003.401.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Authorization: bearer ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-26T213959.401.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Authorization: bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-26T213924.401.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Authorization: bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-26T213736.401.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T213720.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T213450.401.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T213441.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T212808.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T212752.401.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T212721.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+<> 2023-05-26T203307.200.json
+
+###
+
+GET http://localhost:63040/content/course/40
+Content-Type: application/json
+
+<> 2023-05-26T203234.401.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-26T201808.200.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUxMTA0ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQwNzQyZWNmLTQ4YzUtNDkyMS05ZDIxLTZhMTZjZWE0YjM5MiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.KAoue2VskpUtznRNXHhkRvsViqckalA8Newr360LSU8
+Content-Type: application/json
+
+{
+  "auditStatus": "",
+  "courseName": "java",
+  "publishStatus": ""
+}
+
+<> 2023-05-26T201802.200.json
+
+###
+
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
+
+<> 2023-05-26T201446.200.json
 
 ###
 
@@ -145,7 +369,7 @@ Content-Type: application/json
   "publishStatus": ""
 }
 
-<> 2023-05-09T200805.200.json
+<> 2023-05-26T200736.401.json
 
 ###
 
@@ -158,619 +382,27 @@ Content-Type: application/json
   "publishStatus": ""
 }
 
-<> 2023-05-09T200753.200.json
+###
+
+POST http://localhost:63070/auth/oauth/check_token?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODUwOTE2ODYsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjI2NWZiNDMyLTNjYWYtNGFhOC05NTBkLTJhYzkzN2MxYTY1NCIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.6jmc8PQWhnJ8azjK2h6fENy45UGrc_6cIZxE4ZMeM9k
+
+<> 2023-05-26T150636.200.json
 
 ###
 
-DELETE http://localhost:63040/content/ourseTeacher/course/75/23
+POST http://localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
+
+<> 2023-05-26T150126.200.json
 
 ###
 
-DELETE http://localhost:63040/content/ourseTeacher/course/75/23
+POST http://localhost:63070/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
+
+<> 2023-05-26T145939.404.html
 
 ###
 
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "courseId": 75,
-  "teacherName": "王老师",
-  "position": "教师职位",
-  "introduction": "教师简介"
-}
-
-<> 2023-05-06T170532.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T170512.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "courseId": 75,
-  "teacherName": "王老师",
-  "position": "教师职位",
-  "introduction": "教师简介"
-}
-
-<> 2023-05-06T170451.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T170415.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T165604.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T165551.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T165534.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T165509.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T165114.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T164932.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T164345.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T164245.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T164146.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T163934.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T163805.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T163720.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T124734.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T124713.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T124702.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T124058.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T123826.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T123808.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T123436.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T123430.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T123414.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T122923.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T122706.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T115348.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T115316.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T114225.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 23,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T114218.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T114039.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T114034.500.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师2",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T113924.200.json
-
-###
-
-POST http://localhost:63040/content/courseTeacher
-Content-Type: application/json
-
-{
-  "id": 24,
-  "courseId": 75,
-  "teacherName": "王老师王老师",
-  "position": "教师职位教师职位",
-  "introduction": "教师简介教师简介",
-  "photograph": null,
-  "createDate": null
-}
-
-<> 2023-05-06T113641.500.json
+POST http://{{auth_host}}/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
 
 ###
 

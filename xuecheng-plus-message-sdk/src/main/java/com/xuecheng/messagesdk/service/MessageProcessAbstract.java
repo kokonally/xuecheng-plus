@@ -22,6 +22,7 @@ public abstract class MessageProcessAbstract {
     MqMessageService mqMessageService;
 
 
+
     /**
      * @param mqMessage 执行任务内容
      * @return boolean true:处理成功，false处理失败
